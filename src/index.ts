@@ -1,7 +1,16 @@
 import { McpAgent } from "agents/mcp";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import { componentCreationPrompt, stateManagementPrompt, accessibilityPrompt, codeQualityPrompt, performanceOptimizationPrompt } from "./prompt";
+import { 
+	componentCreationPrompt, 
+	stateManagementPrompt, 
+	accessibilityPrompt, 
+	codeQualityPrompt, 
+	performanceOptimizationPrompt,
+	modernWebDevelopmentPrompt,
+	responsiveDesignPrompt,
+	webSecurityPrompt
+} from "./prompt";
 
 // Types for prompt categories
 type PromptCategory = "react" | "fe" | "common";
@@ -304,7 +313,10 @@ export class PromptLibraryMCP extends McpAgent {
 				},
 				fe: {
 					"performance-optimization": performanceOptimizationPrompt,
-					"accessibility": accessibilityPrompt
+					"accessibility": accessibilityPrompt,
+					"modern-web-development": modernWebDevelopmentPrompt,
+					"responsive-design": responsiveDesignPrompt,
+					"web-security": webSecurityPrompt
 				},
 				common: {
 					"code-quality": codeQualityPrompt
